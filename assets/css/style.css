@@ -1,0 +1,129 @@
+.produk-item {
+	height: 50px;
+}
+
+#kontak td {
+	display: inline-block;
+	font-size: 14px;
+}
+
+.nav-link {
+	text-transform: uppercase;
+	margin: 0 5px 0 5px;
+	font-weight: 666;
+}
+
+.nav-item:hover {
+	background:  #ffc107;
+	border-radius: 10px;
+}
+
+.img-col-4 {
+	width: 100%;
+	height: 250px;
+}
+
+
+.img-box {
+	width: 100%;
+	max-height: 200px;
+}
+
+.img-sedang {
+	width: 100%;
+	height: 300px;
+}
+
+.img-besar {
+	width: 100%;
+	height: 400px;
+}
+
+.card:hover {
+	-webkit-box-shadow: 0px 0px 12px 1px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 0px 12px 1px rgba(0,0,0,0.75);
+box-shadow: 0px 0px 12px 1px rgba(0,0,0,0.75);
+}
+
+.aktif {
+	background:  #ffc107;
+	border-radius: 10px;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+	background:  #ffc107;
+}
+
+
+/* Bottom left text */
+.bottom-left {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+}
+
+/* Top left text */
+.top-left {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+}
+
+/* Top right text */
+.top-right {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
+/* Bottom right text */
+.bottom-right {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+}
+
+/* Centered text */
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.bg-gradient-black {
+	background-color: linear-gradient(to right, #808080 , #f2f2f2);
+}
+
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) { 
+	#kontak td {
+		display: inline-block;
+		font-size: 12px;
+	}
+	.img-col-4 {
+		width: 100%;
+		height: 200px;
+	}
+}
+	
+// Small devices (landscape phones, less than 768px)
+@media (max-width: 767.98px) { 
+	#kontak td {
+		display: inline-block;
+		font-size: 12px;
+	} 
+	.img-col-4 {
+		width: 100%;
+		height: 250px;
+	}
+}
+
+// Medium devices (tablets, less than 992px)
+@media (max-width: 991.98px) { ... }
+
+// Large devices (desktops, less than 1200px)
+@media (max-width: 1199.98px) { ... }
+
+// Extra large devices (large desktops)
+// No media query since the extra-large breakpoint has no upper bound on its width
