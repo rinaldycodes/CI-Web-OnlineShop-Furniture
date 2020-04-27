@@ -61,7 +61,7 @@
 						<h5>Total</h5>
 					</div>	
 					<div class="col-6 text-right">
-						<strong>Rp.<?php echo number_format($this->Pesanan_model->total_harga()+$c['tarif'],0,'.','.') ?></strong>
+						<strong>Rp.<?php echo number_format($this->Pesanan_model->total_harga($c['pesanan_id'])+$c['tarif'],0,'.','.') ?></strong>
 					</div>
 				</div>
 			</div>

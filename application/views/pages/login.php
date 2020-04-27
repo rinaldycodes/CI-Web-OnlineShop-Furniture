@@ -20,6 +20,7 @@
 							</div>
 							<div class="form-group">
 								<input type="submit" value="LOGIN" class="form-control btn btn-sm btn-primary">
+								<a href="<?= base_url('lupa-password') ?>">Lupa Password?</a>
 								<hr>
 								<a href="<?php echo base_url('/register') ?>" title="Register" class="btn btn-sm btn-info form-control mb-3">REGISTER</a>
 								<a href="<?php echo base_url('/') ?>" title="Home" class="btn btn-sm btn-secondary form-control">HOME</a>

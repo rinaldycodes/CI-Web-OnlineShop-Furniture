@@ -33,9 +33,9 @@ class Pesanan_model extends CI_MODEL {
 		return $query;
 	}
 
-	function total_harga(){
+	function total_harga($id){
         $this->db->select_sum('harga_total');
-        $this->db->where('pesanan_id',$this->session->userdata('pesanan_id'));
+        $this->db->where('pesanan_id',$id);
         $query = $this->db->get('detail_pesanan');
         if ($query->num_rows()>0) {
             return $query->row()->harga_total;

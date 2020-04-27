@@ -10,6 +10,7 @@ $route['translate_uri_dashes'] = TRUE;
 /* PAGES */
 $route['home'] = 'PagesController/home';
 $route['kontak'] = 'PagesController/kontak';
+$route['cari'] = 'PagesController/cari';
 $route['produk'] = 'PagesController/produk';
 $route['produk/(:any)'] = 'PagesController/produk_kategori/$1';
 $route['tambah-keranjang/(:any)'] = 'PagesController/tambah_keranjang/$1';
@@ -21,7 +22,13 @@ $route['selesai-belanja'] = 'PagesController/selesai_belanja';
 $route['cetak-invoice'] = 'PagesController/cetak_invoice';
 $route['produk/(:any)/(:any)'] = 'PagesController/show_produk/$1/$2';
 
+
+/* AUTH */
 $route['login'] = 'AuthController/login';
+$route['lupa-password'] = 'AuthController/lupa_password';
+$route['proses-reset-password'] = 'AuthController/prosesResetPassword';
+$route['reset-pw-email'] = 'AuthController/resetPW_email';
+$route['reset-pw-notelp'] = 'AuthController/resetPW_notelp';
 $route['cekLogin'] = 'AuthController/cekLogin';
 $route['register'] = 'AuthController/register';
 $route['logout'] = 'AuthController/logout';
@@ -50,6 +57,7 @@ $route['konfirmasi-pembayaran/proses'] = 'user/KonfirmasiPembayaran/prosesKonfir
 /*===================================================================================================*/
 /* MANAGE */
 $route['manage'] = 'admin/DashboardAdmin/index';
+$route['manage/edit-profil/(:any)'] = 'admin/DashboardAdmin/edit/$1';
 /* Data Admin */
 $route['manage/data-admin'] = 'admin/DataAdmin/index';
 $route['manage/data-admin/create'] = 'admin/DataAdmin/create';

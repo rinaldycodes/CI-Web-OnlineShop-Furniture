@@ -16,6 +16,9 @@
         <li class="nav-item <?= $this->uri->segment(1) == 'kontak' ? 'aktif' : '' ?>">
           <a class="nav-link" href="<?= base_url('kontak')?>">Kontak</a>
         </li>
+        <li class="<?= $this->uri->segment(1) == 'cari' ? 'aktif' : '' ?>">
+         
+        </li>
         <!-- <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             MORE...
@@ -37,7 +40,7 @@
         <?php if ( $this->session->userdata('role') == 'user' ): ?>
         <li class="nav-item dropdown <?= $this->uri->segment(1) == 'login' ? 'aktif' : '' ?>">
           <a class="nav-link  dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="fa fa-user"></i> <?php echo $isLogin['nama'] ?>
+            <i class="fa fa-user"></i> <?php echo $this->session->userdata('nama') ?>
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             <a class="dropdown-item" href="<?= base_url('dashboard/'. $isLogin['user_id']) ?>">Dashboard</a>

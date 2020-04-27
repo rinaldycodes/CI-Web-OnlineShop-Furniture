@@ -22,8 +22,8 @@
             </form>
             <!-- Navbar-->
             
-            <!-- NAV BAR ADMIN -->
             <ul class="navbar-nav ml-auto ml-md-0">
+                <!-- NAV BAR ADMIN -->
                 <?php if ($this->session->userdata('role')=='admin'): ?>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-fw"></i> 
@@ -52,6 +52,7 @@
                 <?php endif; ?>
             </ul>
         </nav>
+
         <div id="layoutSidenav">
             <?php if($this->session->userdata('role') == 'user'): ?>
                 <?php $this->load->view('template/partials_backend/sidenav_user') ?>
@@ -60,11 +61,11 @@
             <?php else: ?>
             <?php endif; ?>
 
-
-            
             <div id="layoutSidenav_content">
                 <main class="">
                     <div class="container-fluid">
+                        <?php echo $this->session->flashdata('pesan'); ?>
+
                         <!--  KONTEN  -->
                         <?php $this->load->view($page) ?>                        
                     </div>

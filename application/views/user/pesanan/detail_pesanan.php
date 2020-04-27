@@ -27,10 +27,7 @@
 								<hr>
 									<p>
 									<?php foreach ($invoice as $c): ?>
-										<?php echo $c['nama_produk'] ?>
-										<small>x
-										<strong><?php echo $c['quantity'] ?></strong>
-										</small> <br>
+										<?php echo $c['nama_produk'] ?> Rp.<?= number_format($c['harga'],0,'.','.') ?> x <?php echo $c['quantity'] ?> <br>
 										Berat <?php echo $c['berat'] ?>kg x Rp.10.000 x <?php echo $c['quantity'] ?> <br>
 										<hr>
 										
@@ -61,7 +58,7 @@
 						<h5>Total</h5>
 					</div>	
 					<div class="col-6 text-right">
-						<strong>Rp.<?php echo number_format($this->Pesanan_model->total_harga()+$c['tarif'],0,'.','.') ?></strong>
+						<strong>Rp.<?php echo number_format($this->Pesanan_model->total_harga($c['pesanan_id'])+$c['tarif'],0,'.','.') ?></strong>
 					</div>
 				</div>
 			</div>

@@ -25,6 +25,21 @@ class PagesController extends CI_Controller {
 		$this->load->view($this->template,$data);
 	}
 
+
+	public function cari()
+	{
+		$data['produk_terbaru']	=	$this->db->where('stok >',0)->limit(6)->get('produk');
+		$data['produk']			=	$this->db->where('stok >',0)->get('produk')->result_array();
+		$data['kategori']		=	$this->db->get('kategori')->result_array();
+		$var = $this->input->post('cari');
+		$data['title']	=	'Hasil pencarian dari '.'"'.$var.'"';
+		$data['page']	=	'/pages/cari';
+		$data['isLogin']	=	$this->db->get_where('user', ['email'=>$this->session->userdata('email')])->row_array();
+		$data['hasil_cari']		=		$this->Cari_model->temukan($var)->result_array();
+
+		$this->load->view($this->template,$data, 'refresh');
+	}
+
 	public function produk()
 	{
 		$data['title']			=	'Produk';
@@ -53,7 +68,7 @@ class PagesController extends CI_Controller {
 	{
 		$data['title']	=	'Show Produk';
 		$data['page']	=	'/pages/show_produk';
-		$data['isLogin']	=	$this->db->get_where('admin', ['email_admin'=>$this->session->userdata('email')])->row_array();
+		$data['isLogin']		=	$this->db->get_where('user', ['email'=>$this->session->userdata('email')])->row_array();
 
 		$data['produk'] = $this->Crud->read('produk', 'slug_produk', $slug);
 		$kategori_id = $data['produk']['kategori_id'];

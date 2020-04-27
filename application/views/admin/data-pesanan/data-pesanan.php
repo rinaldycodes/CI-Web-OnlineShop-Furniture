@@ -30,10 +30,10 @@
                   <td><?php echo $c->nama_penerima ?></td>
                   <td><?php echo $c->notelp ?></td>
                   <td><?php echo $c->status ?></td>
-                  <td class="pull-right">
-                    <a class="btn btn-sm btn-primary" href="<?php echo base_url('manage/data-pesanan/edit/'.$c->pesanan_id) ?>" title=""><i class="fas fa-pencil-alt"></i></a>
-                    <a class="btn btn-sm btn-danger" href="<?php echo base_url('manage/data-pesanan/delete/'.$c->pesanan_id) ?>" title=""><i class="fas fa-trash"></i></a>
-                    <a class="btn btn-sm btn-info" href="<?php echo base_url('manage/data-pesanan/read/'.$c->pesanan_id) ?>" title=""><i class="fas fa-eye"></i></a>
+                  <td >
+                    <a class="btn btn-sm my-1 btn-primary pull-right" href="<?php echo base_url('manage/data-pesanan/edit/'.$c->pesanan_id) ?>" title=""><i class="fas fa-pencil-alt"></i></a>
+                    <a class="btn btn-sm my-1 btn-danger" href="<?php echo base_url('manage/data-pesanan/delete/'.$c->pesanan_id) ?>" title=""><i class="fas fa-trash"></i></a>
+                    <a class="btn btn-sm my-1 btn-info" href="<?php echo base_url('manage/data-pesanan/read/'.$c->pesanan_id) ?>" title=""><i class="fas fa-eye"></i></a>
                   </td>
                 </tr>
                 <?php endforeach ?>

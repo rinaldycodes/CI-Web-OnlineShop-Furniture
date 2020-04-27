@@ -15,6 +15,7 @@
     <title><?php echo $title ?> - <?php echo NAMA_WEB ?></title>
   </head>
   <body>
+
     <!-- KONTAK -->
     <section id="kontak" class="bg-dark py-1">
       <div class="container text-white">
@@ -24,6 +25,18 @@
               <td><i class="fa fa-envelope-o"></i> furnitureshop.pro@gmail.com</td>
               <td><i class="fa fa-phone"></i> 021-1397-9180</td>
               <td><i class="fa fa-map-marker"></i> Jl. Patriot, Bekasi Utara No. 45</td>
+              <td>
+                 <form action="<?= base_url('cari') ?>" method="post">
+                  <div class="row">
+                    <div class="col-8">
+                      <input type="text" name="cari" class="form-control">
+                    </div>
+                    <div class="col-4">
+                      <button class="btn btn-primary form-control">Cari</button>
+                    </div>
+                  </div>
+                </form>
+              </td>
             </tr>
           </tbody>
         </table>

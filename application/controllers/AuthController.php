@@ -36,6 +36,126 @@ class AuthController extends CI_Controller {
 		$this->AuthModel->cekLogin();
 	}
 
+	public function lupa_password()
+	{
+		$data['title']		=		'Lupa Password';
+		$data['page']		=		'/pages/lupa-password';
+
+		$this->form_validation->set_rules('lupa_password', 'Lupa Password', 'required|trim',[
+			'required'		=>		'Lupa Password tidak boleh kosong'
+		]);
+		if ($this->form_validation->run() == FALSE) {
+			$this->load->view($this->template, $data);
+		} else {
+			$metode = $this->input->post('metode');
+			$lupa_password = $this->input->post('lupa_password');
+			if ($metode == 'email') {
+				$data = ['metode'=>$metode];
+				$this->session->set_userdata($data);
+				$this->resetPW_email($metode, $lupa_password);
+			} elseif($metode == 'no_telp') {
+				$data = ['metode'=>$metode];
+				$this->session->set_userdata($data);
+				$this->resetPW_notelp($metode, $lupa_password);
+			} else {
+				echo "ups anda salah method!!";;
+			}
+		}
+	}
+
+	public function resetPW_email($metode, $lupa_password)
+	{
+		$data['user'] = $this->db->get_where('user', ['email'=>$lupa_password])->row_array();
+		if ($data['user']) {
+			$data['title']		=		'Reset Password';
+			$data['page']		=		'/pages/reset-password';
+
+			$this->load->view($this->template, $data);
+		} else {
+			$this->session->set_flashdata('pesan', '<div class="alert alert-danger">
+				Akun dengan email tersebut tidak ditemukan!
+				</div>');
+			redirect('lupa-password');
+		}
+	}
+
+	public function resetPW_notelp($metode, $lupa_password)
+	{
+		$data['user'] = $this->db->get_where('user', ['notelp'=>$lupa_password])->row_array();
+		if ($data['user']) {
+			$data['title']		=		'Reset Password';
+			$data['page']		=		'/pages/reset-password2';
+
+
+			$this->load->view($this->template, $data);
+		} else {
+			$this->session->set_flashdata('pesan', '<div class="alert alert-danger">
+				Akun dengan nomor telpon tersebut tidak ditemukan!
+				</div>');
+			redirect('lupa-password');
+		}
+	}
+
+
+	public function prosesResetPassword()
+	{
+		$lupa_password = $this->input->post('lupa_password');
+		$password = $this->input->post('password');
+		$konfirmasi_password = $this->input->post('konfirmasi_password');
+
+		$email = $this->db->get_where('user', ['email'=>$lupa_password])->row_array();
+		$notelp = $this->db->get_where('user', ['notelp'=>$lupa_password])->row_array();
+
+		if ($email) {
+			if ($password == $konfirmasi_password) {
+				$data = [
+					'password' => password_hash($password, PASSWORD_DEFAULT)
+				];
+
+				$this->db->where('user_id', $email['user_id']);
+				$this->db->update('user', $data);
+
+				$this->session->set_flashdata('pesan', '<div class="alert alert-success">
+				Berhasil mengubah password !
+				</div>');
+				redirect('login');
+			} else {
+				$this->session->set_flashdata('pesan', '<div class="alert alert-danger">
+				Email sudah benar, tetapi Password dan Konfirmasi tidak sama
+				</div>');
+				redirect('lupa-password');
+			}
+				
+		} elseif($notelp) {
+			if ($password == $konfirmasi_password) {
+				$data = [
+					'password' => password_hash($password, PASSWORD_DEFAULT)
+				];
+
+				$this->db->where('user_id', $notelp['user_id']);
+				$this->db->update('user', $data);
+
+				$this->session->set_flashdata('pesan', '<div class="alert alert-success">
+				Berhasil mengubah password !
+				</div>');
+				redirect('login');
+			} else {
+				$this->session->set_flashdata('pesan', '<div class="alert alert-danger">
+				No Telpon sudah benar, tetapi Password dan Konfirmasi tidak sama
+				</div>');
+				redirect('lupa-password');
+			}
+
+		} else {
+			$this->session->set_flashdata('pesan', '<div class="alert alert-danger">
+			Data tersebut tidak ditemukan !
+			</div>');
+			redirect('lupa-password');
+		}
+	}
+
+	
+
 	public function register()
 	{
 		if (!$this->session->userdata('role') == 'user' || $this->session->userdata('role') == 'admin') {
@@ -67,6 +187,4 @@ class AuthController extends CI_Controller {
 		session_destroy();
 		redirect('login');
 	}
-
-
 }

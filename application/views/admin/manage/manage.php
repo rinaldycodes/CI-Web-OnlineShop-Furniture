@@ -24,7 +24,7 @@
   <div class="col-xl-6 mb-3">
       <div class="card">
           <div class="card-body">
-             <h2><?php echo $isLogin['nama_admin'] ?></h2>
+             <h2><?php echo $isLogin['nama_admin'] ?> <a href="<?= base_url('manage/edit-profil/'.$isLogin['admin_id']) ?>" class="btn btn-sm btn-primary">Edit Profil</a> <a href=""></a> </h2>
              <hr>
              <div class="form-group">
                 <label for="">Alamat:</label>
