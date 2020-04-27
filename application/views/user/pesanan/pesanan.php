@@ -1,4 +1,4 @@
-<h1 class="mt-4">Pesanan</h1>
+<h1 class="mt-4">Pesanan <?php  echo $isLogin['nama'] ?></h1>
 <ol class="breadcrumb mb-4">
     <li class="breadcrumb-item active">Pesanan</li>
 </ol>
@@ -11,7 +11,7 @@
                 <table id="myTable" class="table-hover table-bordered">
                   <thead>
                     <tr>
-                      <th>Nama</th>
+                      <th>Nama Penerima</th>
                       <th>No. Invoice</th>
                       <th>Tgl Pesan</th>
                       <th>Status</th>

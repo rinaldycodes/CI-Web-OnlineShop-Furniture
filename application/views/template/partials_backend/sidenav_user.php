@@ -29,8 +29,8 @@
                         </div>
                     </div>
                     <div class="sb-sidenav-footer">
-                        <div class="small">Logged in as:</div>
-                        <?php echo $isLogin['nama'] ?> - <?php echo $this->session->userdata('role') ?>
+                        <div class="small">Logged in as: </div>
+                        <?php echo $isLogin['nama'] ?> | <?php  echo $isLogin['user_id'] ?> - <?php echo $this->session->userdata('role') ?>
                     </div>
                 </nav>
             </div>
