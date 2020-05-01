@@ -12,9 +12,7 @@
                             <a class="nav-link" href="<?php echo base_url('konfirmasi-pembayaran') ?>"
                                 ><div class="sb-nav-link-icon"></div>
                                 Konfirmasi Pembayaran</a>
-                            <!-- <a class="nav-link" href="<?php echo base_url('alamat-tagihan') ?>"
-                                ><div class="sb-nav-link-icon"></div>
-                                Alamat Tagihan</a> -->
+                          
                            <!--      
                             <div class="sb-sidenav-menu-heading">Interface</div>
                             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts"
