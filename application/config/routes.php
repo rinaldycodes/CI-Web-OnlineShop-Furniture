@@ -122,3 +122,13 @@ $route['manage/verifikasi-pembayaran/read/(:any)'] = 'admin/VerifikasiPembayaran
 $route['manage/verifikasi-pembayaran/edit/(:any)'] = 'admin/VerifikasiPembayaran/edit/$1';
 $route['manage/verifikasi-pembayaran/update/(:any)'] = 'admin/VerifikasiPembayaran/update/$1';
 $route['manage/verifikasi-pembayaran/delete/(:any)'] = 'admin/VerifikasiPembayaran/delete/$1';
+
+
+/* Data Kategori */
+$route['manage/data-bank'] = 'admin/DataBank/index';
+$route['manage/data-bank/tambah'] = 'admin/DataBank/create';
+$route['manage/data-bank/read/(:any)'] = 'admin/DataBank/read/$1';
+$route['manage/data-bank/edit/(:any)'] = 'admin/DataBank/edit/$1';
+$route['manage/data-bank/update/(:any)'] = 'admin/DataBank/update/$1';
+$route['update/kategori/(:any)'] = 'admin/DataBank/update_kategori/$1';
+$route['manage/data-bank/delete/(:any)'] = 'admin/DataBank/delete/$1';

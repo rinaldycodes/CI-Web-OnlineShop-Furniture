@@ -33,7 +33,7 @@
       <ul class="navbar-nav ml-auto">
         <li class="nav-item dropdown <?= $this->uri->segment(1) == 'keranjang-belanja' ? 'aktif' : '' ?>">
           <a class="nav-link <?= $this->uri->segment(1) == 'keranjang-belanja' ? 'aktif' : '' ?>" href="<?php echo base_url('keranjang-belanja') ?>" title="">
-            <small>Keranjangz: <?php echo $keranjang = $this->cart->total_items() ?></small> 
+            <small>Keranjang: <?php echo $keranjang = $this->cart->total_items() ?></small> 
           </a>
          
         </li>

@@ -1,9 +1,0 @@
----
- 
-deployment:
- 
- tasks:
- 
- - export DEPLOYPATH=/home/rh2bnetmyid/public_html/test-git-1
- 
- - /usr/bin/rsync -Paz * $DEPLOYPATH --delete

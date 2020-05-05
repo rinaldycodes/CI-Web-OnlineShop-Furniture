@@ -25,6 +25,10 @@
                                 ><div class="sb-nav-link-icon"></div>
                                 Data Kota</a>
 
+                            <a class="nav-link" href="<?php echo base_url('manage/data-bank') ?>"
+                                ><div class="sb-nav-link-icon"></div>
+                                Data Bank</a>
+
                                 <!-- UNTUK MENGAMBIL DATA PESANAN
                                 YANG BERSTATUS MENUNGGU VERIFIKASI Admin -->
                                 <?php 

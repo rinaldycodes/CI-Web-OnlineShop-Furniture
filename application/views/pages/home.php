@@ -14,7 +14,7 @@
 						<div class="card">
 							<div class="card-img">
 								<a href="<?php echo base_url('produk/'.$kategori['kategori'].'/'.$c['slug_produk']) ?>" title="">
-									<img class="img-col-4" src="<?php echo base_url('assets/images/'.$c['foto']) ?>" alt="Snow" style="width:100%;">
+									<img class="img-col-4" src="<?php echo base_url('assets/images/'.$c['foto']) ?>" alt="<?= $c['nama_produk'] ?>" style="width:100%;">
 								</a>
 							</div>
 							<div class="card-body">

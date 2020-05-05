@@ -64,7 +64,6 @@
             <div id="layoutSidenav_content">
                 <main class="">
                     <div class="container-fluid">
-                        <?php echo $this->session->flashdata('pesan'); ?>
 
                         <!--  KONTEN  -->
                         <?php $this->load->view($page) ?>                        

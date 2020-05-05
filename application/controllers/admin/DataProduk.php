@@ -174,13 +174,11 @@ class DataProduk extends CI_Controller {
 			];
 		
 
-			if(unlink(FCPATH . 'assets/images/'.$file_lama)){
 			    $this->Crud->update('produk', 'slug_produk', $slug, $insertdata);
 				$this->session->set_flashdata('pesan', '<div class="alert alert-success">
 					Berhasil mengubah data!
 				</div>');
 				redirect('manage/data-produk');
-			}	
 		}
 	}
 
